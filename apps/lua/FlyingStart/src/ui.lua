@@ -108,7 +108,7 @@ end
 
 function UI.main(state, config, Launch, Track, Physics, Utils, dt)
   state.config = config
-  ui.setNextWindowSizeConstraints(vec2(330, 260), vec2(430, 560))
+  ui.setNextWindowSizeConstraints(vec2(330, 300), vec2(430, 600))
   ui.beginOutline()
   drawHeader(state)
   ui.separator()
@@ -127,6 +127,14 @@ function UI.main(state, config, Launch, Track, Physics, Utils, dt)
     if active then ui.pushStyleColor(ui.StyleColor.Button, rgbm(0.02, 0.54, 0.72, 1)) end
     if ui.button(tostring(v) .. '%', vec2(54, 28)) then config.launch_speed_percent = v end
     if active then ui.popStyleColor() end
+  end
+
+  ui.dummy(vec2(1, 8))
+  ui.text('Countdown (seconds)')
+  local countdownStr = ui.inputText('##countdown_main', tostring(math.floor(config.countdown_duration)), 6)
+  if countdownStr ~= tostring(math.floor(config.countdown_duration)) then
+    local val = tonumber(countdownStr) or config.countdown_duration
+    config.countdown_duration = Config.clamp(val, config.min_countdown_duration, config.max_countdown_duration)
   end
 
   drawDiagnostics(state, config, Track, Physics, Utils)
@@ -152,7 +160,7 @@ function UI.settings(state, config, Config, Utils, dt)
     config.countdown_duration = Config.clamp(val, config.min_countdown_duration, config.max_countdown_duration)
   end
   ui.sameLine(0, 8)
-  ui.text(string.format('(%.1f - %.0f s)', config.min_countdown_duration, config.max_countdown_duration))
+  ui.text(string.format('(0 - 999 s)'))
 
   ui.text('Distance before finish (meters)')
   local distanceStr = ui.inputText('##distance', tostring(math.floor(config.distance_before_finish)), 10)
