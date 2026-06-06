@@ -1,0 +1,16 @@
+Flying Start v1.5
+
+Install with Content Manager:
+1. Drag FlyingStart_v1.0.rar into Content Manager.
+2. Install the mod.
+3. Enable the Lua app named "Flying Start".
+
+Manual install:
+1. Copy apps/lua/FlyingStart into assettocorsa/apps/lua/FlyingStart.
+2. Enable the app in Content Manager.
+3. Start an offline practice or hotlap session.
+4. Open the app and press Start Flying Lap.
+
+Notes:
+- CSP/AC only allow arbitrary car state loading in supported offline modes.
+- The diagnostics panel reports which spline and physics APIs are available.
