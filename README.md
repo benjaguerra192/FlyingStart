@@ -1,4 +1,4 @@
-# Flying Start v1.5
+# Flying Start v1.6
 
 ## 🚀 Overview
 
@@ -19,6 +19,7 @@ Perfect for:
 - **Customizable countdown**: Set any countdown duration from 0-999 seconds (instant launch to extended warm-up)
 - **Gear selection**: Automatically engages the correct gear based on launch speed and car setup
 - **Smooth velocity application**: Uses physics APIs to apply realistic forward velocity
+- **Max throttle exit**: Optional 100% throttle assist after GO for maximum acceleration out of launch
 
 ### Extensible Configuration
 - **Text-based input fields**: Type any value directly (not limited to presets)
@@ -30,6 +31,7 @@ Perfect for:
   - Surface offset: 0-1000mm
 - **Min/max bounds**: All ranges are easily customizable in `config.lua`
 - **Persistent storage**: Settings save automatically between sessions
+- **Global accent color**: Choose Cyan, Lime, Orange, Violet, or Red for the app theme
 
 ### Professional UI
 - **Main window**: Large countdown display, speed buttons, quick countdown adjuster
@@ -61,10 +63,12 @@ Perfect for:
 
 ### Method 1: Content Manager (Recommended)
 
-1. Download `FlyingStart.rar` from releases
-2. Drag and drop into Content Manager
+1. Download `FlyingStart_v1.6_CM.zip` from `dist` or GitHub releases
+2. Drag and drop the zip into Content Manager
 3. Click "Install"
 4. Enable the app in Content Manager's Lua apps section
+
+The archive root must contain `apps/lua/FlyingStart/...`. Do not zip only the inner `FlyingStart` folder.
 
 ### Method 2: Manual Installation
 
@@ -97,6 +101,8 @@ Then enable in Content Manager.
 
 3. **Configure your launch** (optional)
    - Adjust launch speed using buttons (50%-100%) or slider
+   - Choose exit mode: coast assist or max throttle
+   - Change global accent color in Settings
    - Set countdown duration in the text field (0-999 seconds)
    - Visit Settings for more options (distance, surface offset, etc.)
 
@@ -191,7 +197,7 @@ When enabled, shows real-time system information:
 
 ```
 Diagnostics
-Version check: v1.5 / 2026-06-06-direction-and-gears
+Version check: v1.6 / 2026-06-10-ui-and-exit-mode
 ✅ Reset allowed: true
 ✅ Set position: true
 ✅ Spline: true
@@ -262,6 +268,13 @@ Gear max km/h: 1:85 / 2:145 / 3:210 / 4:280
 - Some modded tracks need CSP cache update: restart CSP
 
 ## 📝 Changelog
+
+### Version 1.6 - UI and Exit Mode Build
+
+- ✅ **Max throttle exit**: Optional 100% throttle assist after GO
+- ✅ **Accent colors**: Cyan, Lime, Orange, Violet, and Red app themes
+- ✅ **UI refresh**: Clearer sections, themed buttons, and better status readability
+- ✅ **CM-ready package**: `dist/FlyingStart_v1.6_CM.zip` uses the required `apps/lua/FlyingStart/...` archive root
 
 ### Version 1.5 - Direction and Gears Build
 
@@ -381,7 +394,7 @@ Free to use, modify, and distribute with attribution.
 
 ## 🙏 Credits
 
-**Flying Start v1.5** is developed and maintained by the Assetto Corsa modding community.
+**Flying Start v1.6** is developed and maintained by the Assetto Corsa modding community.
 
 Special thanks to:
 - Custom Shaders Patch team (for Lua app framework)
@@ -415,9 +428,9 @@ Special thanks to:
 
 ## 📮 Version Info
 
-- **Current Version**: 1.5
-- **Build**: 2026-06-06-direction-and-gears
-- **Last Updated**: June 6, 2026
+- **Current Version**: 1.6
+- **Build**: 2026-06-10-ui-and-exit-mode
+- **Last Updated**: June 10, 2026
 - **Status**: Active Development
 
 ---

@@ -112,7 +112,7 @@ function Launch.prepareAndLaunch(state, Track, Physics, Utils)
   state.busy = false
   Physics.applyGear(state.pendingGear or 2, Utils)
   Physics.launchVelocity(targetVelocity, Utils)
-  Physics.releaseControl(targetSpeedKmh)
+  Physics.releaseControl(state.config)
   state.mode = Launch.State.SUCCESS
   state.timer = 0
   state.message = 'GO'

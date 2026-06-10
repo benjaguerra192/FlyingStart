@@ -1,13 +1,23 @@
-Flying Start v1.5
+Flying Start v1.6
 
 Install with Content Manager:
-1. Drag FlyingStart_v1.0.rar into Content Manager.
-2. Install the mod.
-3. Enable the Lua app named "Flying Start".
+1. Download FlyingStart_v1.6_CM.zip from dist or GitHub releases.
+2. Drag the zip into Content Manager.
+3. Install the mod.
+4. Enable the Lua app named "Flying Start".
+
+Package format:
+- The zip root must contain apps/lua/FlyingStart/...
+- Content Manager installs those paths relative to the Assetto Corsa folder.
+- The included dist/FlyingStart_v1.6_CM.zip uses this structure.
+
+Build the package:
+1. Run tools/package-release.sh from the repository root.
+2. Upload dist/FlyingStart_v1.6_CM.zip to GitHub releases.
 
 Manual install:
 1. Copy apps/lua/FlyingStart into assettocorsa/apps/lua/FlyingStart.
-2. Enable the app in Content Manager.
+2. Enable the Lua app named "Flying Start".
 3. Start an offline practice or hotlap session.
 4. Open the app and press Start Flying Lap.
 

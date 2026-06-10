@@ -229,9 +229,13 @@ function Physics.teleportWithState(target, targetVelocity, gear, Utils, callback
   end
 end
 
-function Physics.releaseControl(targetSpeedKmh)
+function Physics.releaseControl(config)
   if physics and physics.lockUserControlsFor then physics.lockUserControlsFor(0) end
-  if physics and physics.forceUserThrottleFor then physics.forceUserThrottleFor(0.35, 1) end
+  if physics and physics.forceUserThrottleFor then
+    local throttle = config and config.full_throttle_exit and 1 or 0.35
+    local duration = config and config.full_throttle_exit and 1.8 or 1
+    physics.forceUserThrottleFor(throttle, duration)
+  end
 end
 
 return Physics

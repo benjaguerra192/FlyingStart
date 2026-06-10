@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6
+
+- Added Max throttle exit mode, which holds 100% throttle briefly after GO.
+- Added selectable global accent colors for the UI.
+- Refreshed main/settings layout with clearer sections, themed buttons and better status readability.
+- Fixed main window config access by passing `Config` into `UI.main`.
+
 ## 1.5
 
 - Flipped the launch tangent so `physics.setCarPosition` points the car down the recta instead of backwards.

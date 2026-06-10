@@ -6,6 +6,8 @@ local defaults = {
   distance_before_finish = 10,
   fallback_max_speed_kmh = 300,
   surface_offset_m = 0.18,
+  full_throttle_exit = false,
+  accent_color = 1,
   debug_panel = true,
   min_countdown_duration = 0,
   max_countdown_duration = 999,
@@ -26,6 +28,8 @@ function Config.load()
     distance_before_finish = tonumber(storage.distance_before_finish) or defaults.distance_before_finish,
     fallback_max_speed_kmh = tonumber(storage.fallback_max_speed_kmh) or defaults.fallback_max_speed_kmh,
     surface_offset_m = tonumber(storage.surface_offset_m) or defaults.surface_offset_m,
+    full_throttle_exit = storage.full_throttle_exit == true,
+    accent_color = Config.clamp(tonumber(storage.accent_color) or defaults.accent_color, 1, 5),
     debug_panel = storage.debug_panel ~= false,
     min_countdown_duration = defaults.min_countdown_duration,
     max_countdown_duration = defaults.max_countdown_duration,
@@ -44,6 +48,8 @@ function Config.save(config)
   storage.distance_before_finish = config.distance_before_finish
   storage.fallback_max_speed_kmh = config.fallback_max_speed_kmh
   storage.surface_offset_m = config.surface_offset_m
+  storage.full_throttle_exit = config.full_throttle_exit
+  storage.accent_color = config.accent_color
   storage.debug_panel = config.debug_panel
 end
 

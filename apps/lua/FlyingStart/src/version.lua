@@ -1,10 +1,15 @@
 local Version = {}
 
-Version.number = '1.5'
-Version.build = '2026-06-06-direction-and-gears'
+Version.number = '1.6'
+Version.build = '2026-06-10-ui-and-exit-mode'
 Version.label = 'v' .. Version.number .. ' / ' .. Version.build
 
 Version.changelog = {
+  '1.6 - UI and exit mode build',
+  '- Adds full-throttle exit mode after launch for maximum acceleration.',
+  '- Adds selectable global accent colors.',
+  '- Refreshes main and settings UI with clearer status, themed controls and compact sections.',
+  '',
   '1.5 - Direction and gears build',
   '- Flips track tangent for CSP setCarPosition direction convention.',
   '- Launch velocity now follows the corrected direction.',

@@ -36,7 +36,7 @@ function script.update(dt)
 end
 
 function windowMain(dt)
-  UI.main(state, config, Launch, Track, Physics, Utils, dt or 0)
+  UI.main(state, config, Config, Launch, Track, Physics, Utils, dt or 0)
 end
 
 function windowSettings(dt)
